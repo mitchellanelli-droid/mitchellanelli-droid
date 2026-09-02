@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chronicles of the Realm</title>
+  <style>
+    /* Dark fantasy color palette & typography */
+    :root {
+      --bg-dark: #0f0d0e;
+      --card-bg: #1c1817;
+      --text-main: #d4c5b9;
+      --text-light: #f3eae1;
+      --accent: #d4af37; /* Gold */
+      --accent-hover: #f1c40f;
+      --border: #4a3b32;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Georgia', serif;
+      line-height: 1.6;
+      padding-bottom: 3rem;
+    }
+
+    /* Navigation Header */
+    header {
+      background-color: rgba(15, 13, 14, 0.95);
+      border-bottom: 2px solid var(--accent);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--accent);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      color: var(--text-main);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* Layout Container */
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    /* Textured Card Component */
+    .textured-card {
+      background-color: var(--card-bg);
+      /* Inline SVG filter producing a parchment/stone texture effect */
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2.5rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+    }
+
+    h1, h2 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-weight: normal;
+      letter-spacing: 1px;
+    }
+
+    h1 { font-size: 2.2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+    h2 { font-size: 1.6rem; margin-top: 1rem; }
+
+    p { margin-bottom: 1.2rem; }
+
+    /* Lore Grid Layout */
+    .lore-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .lore-item {
+      background: rgba(0,0,0,0.3);
+      padding: 1.2rem;
+      border-left: 3px solid var(--accent);
+    }
+
+    /* Form Styles */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    label {
+      font-weight: bold;
+      color: var(--text-light);
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      background-color: #0f0d0e;
+      border: 1px solid var(--border);
+      color: var(--text-light);
+      font-family: inherit;
+      border-radius: 3px;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    button {
+      background-color: var(--accent);
+      color: #0f0d0e;
+      border: none;
+      padding: 1rem;
+      font-size: 1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      border-radius: 3px;
+    }
+
+    button:hover {
+      background-color: var(--accent-hover);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="logo">Realm of Shadows</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#lore">Lore</a>
+      <a href="#signup">Signup</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    
+    <!-- HOME SECTION -->
+    <section id="home" class="textured-card">
+      <h1>The Campaign Begins</h1>
+      <p>Welcome, traveler. Ancient shadows gather across the lands, and old powers stir beneath forgotten ruins. Gather your courage, prepare your spells, and sharpen your blade.</p>
+      <p>We meet weekly to forge tales of triumph, betrayal, and discovery. Check the lore repository below before submitting your character sheet for entry.</p>
+    </section>
+
+    <!-- LORE SECTION -->
+    <section id="lore" class="textured-card">
+      <h1>World Lore & Factions</h1>
+      <p>Knowledge is the difference between surviving a descent into the depths or joining the bones of those who failed.</p>
+      
+      <div class="lore-grid">
+        <div class="lore-item">
+          <h2>The Iron Council</h2>
+          <p>Rulers of the central strongholds, maintaining order through strict law and heavy steel.</p>
+        </div>
+        <div class="lore-item">
+          <h2>The Ash Enclave</h2>
+          <p>Recluse arcanists studying the cataclysmic forces that shattered the old kingdom.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIGNUP SECTION -->
+    <section id="signup" class="textured-card">
+      <h1>Join the Party</h1>
+      <p>Ready to jump into the campaign? Fill out your details below to submit your adventurer for approval.</p>
+      
+      <form onsubmit="event.preventDefault(); alert('Character request submitted to the DM!');">
+        <div>
+          <label for="player-name">Player Name</label>
+          <input type="text" id="player-name" required placeholder="Your name or Discord handle" />
+        </div>
+        
+        <div>
+          <label for="char-name">Character Name & Class</label>
+          <input type="text" id="char-name" required placeholder="e.g., Thruman - Dwarf Paladin" />
+        </div>
+
+        <div>
+          <label for="experience">D&D Experience Level</label>
+          <select id="experience">
+            <option>Beginner</option>
+            <option>Intermediate</option>
+            <option>Veteran</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="backstory">Brief Backstory Hook</label>
+          <textarea id="backstory" rows="4" placeholder="What brings your hero into the adventure?"></textarea>
+        </div>
+
+        <button type="submit">Submit Character Sheet</button>
+      </form>
+    </section>
+
+  </div>
+
+</body>
+</html>
